@@ -3,7 +3,7 @@ import subprocess
 import sys
 import os
 
-menu = ["Snake", "Exit"]
+menu = ["Snake", "Tic Tac Toe", "Exit"]
 
 
 def setup_colors():
@@ -107,6 +107,12 @@ def main(stdscr):
             if menu[selected] == "Snake":
                 curses.endwin()
                 game_path = os.path.join(base_dir, "games", "snake.py")
+                subprocess.run([sys.executable, game_path])
+                stdscr.clear()
+
+            if menu[selected] == "Tic Tac Toe":
+                curses.endwin()
+                game_path = os.path.join(base_dir, "games", "tictactoe.py")
                 subprocess.run([sys.executable, game_path])
                 stdscr.clear()
 
